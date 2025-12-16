@@ -1,0 +1,39 @@
+digraph {
+	fontname=Helvetica fontsize=12 rankdir=TB
+	node [fillcolor="#E0F2F1" fontname=Helvetica shape=box style="rounded,filled"]
+	1 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>1. Arquivo fonte LaTeX</b><BR/>- Documento principal (.tex)<BR/>- Classe elsarticle (.cls)<BR/>- Estilo bibliográfico (.bst)<BR/>- Base de referências (.bib)</TD></TR></TABLE>>]
+	2 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>2. Primeira compilação LaTeX</b><BR/>- Execução do pdflatex<BR/>- Leitura de .tex e .cls<BR/>- Escrita de citações e rótulos</TD></TR></TABLE>>]
+	3 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>3. Arquivos auxiliares iniciais</b><BR/>- aux: citações e referências cruzadas<BR/>- log: registro da compilação<BR/>- out: informações para hyperlinks<BR/>- toc/lof/lot: listas e sumário (se existirem)</TD></TR></TABLE>>]
+	4 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>4. Processamento BibTeX</b><BR/>- Leitura de aux, bib e bst<BR/>- Seleção e formatação das referências<BR/>- Geração da bibliografia em LaTeX</TD></TR></TABLE>>]
+	5 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>5. Arquivos da bibliografia</b><BR/>- bbl: referências formatadas<BR/>- blg: log do BibTeX</TD></TR></TABLE>>]
+	6 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>6. Segunda compilação LaTeX</b><BR/>- Incorporação do bbl ao texto<BR/>- Resolução inicial das citações<BR/>- Atualização dos rótulos</TD></TR></TABLE>>]
+	7 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>7. Compilação final LaTeX</b><BR/>- Estabilização da numeração<BR/>- Resolução de referências cruzadas<BR/>- Ativação de links (hyperref)</TD></TR></TABLE>>]
+	8 [label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD ALIGN="LEFT"><b>8. Arquivos finais e de controle</b><BR/>- pdf: documento final<BR/>- synctex.gz: sincronização editor-PDF<BR/>- fls: arquivos lidos<BR/>- fdb_latexmk: dependências do latexmk</TD></TR></TABLE>>]
+	{
+		rank=same
+		1
+		5
+	}
+	{
+		rank=same
+		2
+		6
+	}
+	{
+		rank=same
+		3
+		7
+	}
+	{
+		rank=same
+		4
+		8
+	}
+	1 -> 2
+	2 -> 3
+	3 -> 4
+	5 -> 6
+	6 -> 7
+	7 -> 8
+	4 -> 5
+}

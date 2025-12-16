@@ -1,0 +1,170 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+% Packages
+\usepackage{hyperref}  % clickable links and references
+\usepackage{amssymb}   % additional mathematical symbols
+\usepackage{amsmath}   % mathematical environments and commands
+\usepackage{lineno}    % line numbering of the text
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1) TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+\thispagestyle{empty}
+
+\begin{center}
+    {\Large Article Title\par}
+    \vspace{0.6cm}
+    \noindent
+    Author 1$^{a}$, Author 2$^{a,b}$, Author 3$^{a}$, Author 4$^{c}$ \\
+\end{center}
+
+\vspace{-0.4cm}
+
+\noindent
+\footnotesize
+    \begin{center}
+    $^{a}$ \textit{Institute A, Complete address}\\
+    $^{b}$ \textit{Institute B, Complete address}\\
+    $^{c}$ \textit{Institute C, Complete address}\\
+\end{center}
+
+\vspace{1cm}
+
+\noindent
+\footnotesize \textit{Email address:} \texttt{username@domain} (Corresponding author's name)
+
+%\section*{Acknowledgements}
+
+%This study was financed by ...
+
+\end{titlepage}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2) HIGHLIGHTS PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+{\Large Highlights\par}
+
+\vspace{0.4cm}
+
+\noindent
+\textbf{Article title}
+
+\begin{itemize}
+    \item Highlight 1.
+    \item Highlight 2.
+    \item Highlight 3.
+    \item Highlight 4.
+    \item Highlight 5.
+\end{itemize}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3) MANUSCRIPT (Blinded)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frontmatter}
+
+\title{Article title}
+
+%% Abstract
+\begin{abstract}
+This study investigates ...
+\end{abstract}
+
+%% Keywords here, in the form: keyword \sep keyword
+\begin{keyword}
+Keyword 1 \sep Keyword 2 \sep Keyword 3 \sep Keyword 4 \sep Keyword 5 \sep Keyword 6
+\end{keyword}
+
+\end{frontmatter}
+
+%% Start line numbers
+\begin{linenumbers}
+
+%% Use \section commands to start a section
+\section{Introduction}
+
+Text with citations:
+
+\begin{itemize}
+    \item textual citation where the author is part of the sentence (citet): \citet{Rocha2025}
+    \item parenthetical citation (citep): \citep{Rocha2025}
+\end{itemize}
+
+\section{Methodology}
+
+The Figure \ref{fig:example} was made using script `flowchart.py` ...
+
+\begin{figure}[!htb]
+    \includegraphics[width=\linewidth]{figs/flowchart.png}
+    \caption{Flowchart of how LaTeX works to generate a PDF.}
+    \label{fig:example}
+\end{figure}
+
+\subsection{Subsection example}\label{subsec:example}
+
+Example of equation (Equation \ref{eq:example}):
+
+\begin{equation}\label{eq:example}
+DAOI_{Ref} = \frac{1}{N_s} \sum_{t \in S} (GHI_t - GHI_{Ref,t})
+\end{equation}
+
+where $S = \{t \mid GHI_t > GHI_{Ref,t}\}$ and $N_s = |S|$.
+
+Example of a table (Table \ref{tab:example}):
+
+\begin{table}[!htb]
+\centering
+\caption{Summary of the results.}
+\label{tab:example}
+\begin{tabular}{lccccc}
+\hline
+Model       & Var1    & Var2 \\
+\hline
+model1      & 0.20342 & 0.14154 \\
+model2      & 0.21000 & 0.15000 \\
+model3      & 0.16708 & 0.12299 \\
+model4      & 0.16000 & 0.12000 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Results and discussion}
+
+More text... See more at Section \ref{subsec:example}
+
+\section{Conclusions}
+
+More text... See more at Appendix \ref{sec:appendix}
+
+% End line numbers
+\end{linenumbers}
+
+% Comment only for peer review
+%\section{Acknowledgements}
+
+%This study was financed by ...
+
+\clearpage
+\appendix
+\section{Appendix name section}
+\label{sec:appendix}
+
+Appendix informations ...
+
+%% Include bibliography
+\bibliographystyle{elsarticle-num-names} 
+\bibliography{cas-refs}
+
+\end{document}
+
+\endinput
