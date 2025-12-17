@@ -8,79 +8,61 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 1) TITLE PAGE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{titlepage}
-\thispagestyle{empty}
-
-\begin{center}
-    {\Large Article title\par}
-    \vspace{0.6cm}
-    \noindent
-    First Author$^{a}$, Second Author$^{a,b}$, Third Author$^{a}$, Fourth Author$^{c}$ \\
-\end{center}
-
-\vspace{-0.4cm}
-
-\noindent
-\footnotesize
-    \begin{center}
-    $^{a}$ \textit{Institute A, Address, 123, City Name, 99999-999, State Abbreviation, Country Name}\\
-    $^{b}$ \textit{Institute B, Address, 456, City Name, 99999-999, State Abbreviation, Country Name}\\
-    $^{c}$ \textit{Institute C, Address, 789, City Name, 99999-999, State Abbreviation, Country Name}\\
-\end{center}
-
-\vspace{1cm}
-
-\noindent
-\footnotesize \textit{Email address:} \texttt{username@domain} (Corresponding author's name)
-
-%\section*{Acknowledgements}
-
-%This study was financed by ...
-
-\end{titlepage}
-
-\clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 2) HIGHLIGHTS PAGE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\noindent
-{\Large Highlights\par}
-
-\vspace{0.4cm}
-
-\noindent
-\textbf{Article title}
-
-\begin{itemize}
-    \item Highlight 1.
-    \item Highlight 2.
-    \item Highlight 3.
-    \item Highlight 4.
-    \item Highlight 5.
-\end{itemize}
-
-\clearpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 3) MANUSCRIPT (Blinded)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frontmatter}
 
 \title{Article title}
 
+%% UNCOMMENT to final version:
+%\author[inst1]{First Author}
+%\ead{username@domain}
+%\author[inst1,inst2]{Second Author}
+%\author[inst1]{Third Author}
+%\author[inst3]{Fourth Author}
+%\affiliation[inst1]{organization={Institute A},
+%      addressline={Address, 123}, 
+%      city={City Name},
+%      postcode={99999-999}, 
+%      state={State Abbreviation},
+%      country={Country Name}}
+%\affiliation[inst2]{organization={Institute B},
+%      addressline={Address, 456}, 
+%      city={City Name},
+%      postcode={99999-999}, 
+%      state={State Abbreviation},
+%      country={Country Name}}
+%\affiliation[inst3]{organization={Institute C},
+%      addressline={Address, 789}, 
+%      city={City Name},
+%      postcode={99999-999}, 
+%      state={State Abbreviation},
+%      country={Country Name}}
+
+% Uncomment if you need the acknowledgments on the title page
+%\section*{Acknowledgements}
+
+%This study was financed by ...
+
 %% Abstract
 \begin{abstract}
-This study investigates ...
+%% Text of abstract
+Abstract text.
 \end{abstract}
 
-%% Keywords here, in the form: keyword \sep keyword
+%%Graphical abstract
+%\begin{graphicalabstract}
+%\includegraphics{grabs}
+%\end{graphicalabstract}
+
+%% UNCOMMENT to final version:
+%\begin{highlights}
+%    \item Highlight 1.
+%    \item Highlight 2.
+%    \item Highlight 3.
+%    \item Highlight 4.
+%    \item Highlight 5.
+%\end{highlights}
+
+%% Keywords here, separated with \sep
 \begin{keyword}
 Keyword 1 \sep Keyword 2 \sep Keyword 3 \sep Keyword 4 \sep Keyword 5 \sep Keyword 6
 \end{keyword}
@@ -149,7 +131,7 @@ More text... See more at Appendix \ref{sec:appendix}
 % End line numbers
 \end{linenumbers}
 
-% Comment only for peer review
+%% UNCOMMENT to final version:
 %\section{Acknowledgements}
 
 %This study was financed by ...
@@ -166,5 +148,3 @@ Appendix informations ...
 \bibliography{cas-refs}
 
 \end{document}
-
-\endinput

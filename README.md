@@ -2,14 +2,21 @@
 
 This repository contains the source files and auxiliary scripts used to produce an Elsevier-format journal article using LaTeX, BibTeX, and automated build tools. The project is designed to be cleanly versioned with Git, tracking only the scientifically relevant inputs and final outputs. See more at [Monolito Nimbus - Artigo duplo cego com LaTeX](https://www.monolitonimbus.com.br/artigo-duplo-cego-com-latex) (in portuguese).
 
----
-
 ## Project Structure
 
 ### Core LaTeX files
 
 - **`elsarticle-double-blind.tex`**  
-  Main LaTeX source file of the manuscript, written using the `elsarticle` class and configured for double-blind review: Title page (author's info and optional acknowledgements), Highlights, Manuscript (abstract, keywords, text with examples and numbered lines, acknowledgements commented).
+  Main LaTeX source file of the manuscript, written using the `elsarticle` class and configured for double-blind review: Title page (author's info and optional acknowledgements), Highlights, Manuscript (abstract, keywords, text with examples and numbered lines, acknowledgements commented). All things in the same file.
+
+- **`titlepage.tex`**  
+  LaTeX source file of the Title page (author's info and optional acknowledgements).
+
+  - **`highlights.tex`**  
+  LaTeX source file of the Highlights.
+
+  - **`manuscript.tex`**  
+  Main LaTeX source file of the Manuscript (abstract, keywords, text with examples and numbered lines, acknowledgements commented).
 
 - **`elsarticle.cls`**  
   Official Elsevier LaTeX document class, responsible for layout, formatting, and structural rules of the article.
@@ -20,10 +27,8 @@ This repository contains the source files and auxiliary scripts used to produce 
 - **`cas-refs.bib`**  
   BibTeX database containing all bibliographic entries cited in the manuscript.
 
-- **`elsarticle-double-blind.pdf`**  
-  Compiled PDF of the manuscript. This file is a build artifact and may be regenerated from the source.
-
----
+- **`*.pdf`**  
+  Compiled PDFs of the TEX files - just for view, they can be regenerated from the source.
 
 ### Citation and conversion styles
 
@@ -35,8 +40,6 @@ This repository contains the source files and auxiliary scripts used to produce 
 
 Both were obtained from [CSL Github](https://github.com/citation-style-language/styles) via [Zootero](https://www.zotero.org/styles).
 
----
-
 ### Figures and diagrams
 
 - **`figs/flowchart`**  
@@ -45,28 +48,28 @@ Both were obtained from [CSL Github](https://github.com/citation-style-language/
 - **`figs/flowchart.png`**  
   Rendered flowchart illustrating the LaTeX → BibTeX → PDF build process.
 
----
-
 ### Scripts and utilities
 
 - **`flowchart.py`**  
   Python script (Graphviz-based) used to generate the compilation workflow diagram programmatically.
 
+- **`texcount.pl`**  
+  Perl script to perform a word count in the body text and in different parts of the .tex document - this is part of the package `texlive-extra-utils` and can be downloaded directly from [The Comprehensive TeX Archive Network (CTAN)](https://mirrors.ctan.org/support/texcount/texcount.pl). Change te executable script using `chmod +x texcount.pl` and execute using `./texcount.pl elsarticle-double-blind.tex`.
+
 - **`tex2doc.sh`**  
   Shell script to automate conversions from LaTeX to other document formats (e.g., via Pandoc).
-
----
 
 ## Version Control Policy
 
 - **`.gitignore`**  
   The `.gitignore` file is configured to exclude all auxiliary files generated during LaTeX compilation (e.g., `.aux`, `.log`, `.bbl`, `.blg`, `.fdb_latexmk`) as well as temporary files produced by Pandoc and editors. This ensures the repository remains clean, reproducible, and focused on source files rather than build artifacts.
 
----
-
 ## Build Instructions
 
 To compile the manuscript locally:
 
 ```bash
-latexmk -pdf elsarticle-double-blind.tex
+latexmk -pdf titlepage.tex
+latexmk -pdf highlights.tex
+latexmk -pdf manuscript.tex
+bash tex2doc.sh
