@@ -12,10 +12,10 @@ This repository contains the source files and auxiliary scripts used to produce 
 - **`titlepage.tex`**  
   LaTeX source file of the Title page (author's info and optional acknowledgements).
 
-  - **`highlights.tex`**  
+- **`highlights.tex`**  
   LaTeX source file of the Highlights.
 
-  - **`manuscript.tex`**  
+- **`manuscript.tex`**  
   Main LaTeX source file of the Manuscript (abstract, keywords, text with examples and numbered lines, acknowledgements commented).
 
 - **`elsarticle.cls`**  
@@ -26,9 +26,6 @@ This repository contains the source files and auxiliary scripts used to produce 
 
 - **`cas-refs.bib`**  
   BibTeX database containing all bibliographic entries cited in the manuscript.
-
-- **`*.pdf`**  
-  Compiled PDFs of the TEX files - just for view, they can be regenerated from the source.
 
 ### Citation and conversion styles
 
@@ -58,6 +55,14 @@ Both were obtained from [CSL Github](https://github.com/citation-style-language/
 
 - **`tex2doc.sh`**  
   Shell script to automate conversions from LaTeX to other document formats (e.g., via Pandoc).
+
+### Output files
+
+- **`*.pdf`**  
+  Compiled PDFs of the TEX files - just for view, they can be regenerated from the source.
+
+- **`*.docx`**  
+  Generated DOCXs from the TEX files - just for view, they can be regenerated from the source.
 
 ## Version Control Policy
 
