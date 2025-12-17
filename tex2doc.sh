@@ -8,6 +8,7 @@ pandoc highlights.tex \
   -o highlights.docx
 pandoc manuscript.tex \
   --bibliography=cas-refs.bib \
+  --filter pandoc-crossref \
   --citeproc \
   --csl=elsevier-with-titles.csl \
   --number-sections \

@@ -27,6 +27,8 @@
 *.tex.orig
 *.md.orig
 *_pandoc.*
+# Libreoffice Temporary
+*.docx#
 
 # -----------------------------
 # Editor / OS
