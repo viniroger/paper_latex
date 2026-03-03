@@ -64,6 +64,11 @@ Both were obtained from [CSL Github](https://github.com/citation-style-language/
 - **`*.docx`**  
   Generated DOCXs from the TEX files - just for view, they can be regenerated from the source.
 
+### Extra file
+
+- **`latex_flatten_submission.py`**
+  Automatically prepare a LaTeX submission package for journals that do NOT allow folder structure during upload. It also selects only the files that are used to generate the PDF.
+
 ## Version Control Policy
 
 - **`.gitignore`**  
